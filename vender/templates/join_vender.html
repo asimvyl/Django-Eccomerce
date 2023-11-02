@@ -1,11 +1,39 @@
 {% extends "base.html" %}
 
-
 {% block title %}
 Vender
 {% endblock title %}
 
 {% block content %}
 
-<h1> vender page</h1>
+<h1 class="has-text-centered"> vender Register</h1>
+<form method="post">
+    {% csrf_token %}
+
+    <div class="form-field">
+        <label for="{{ form.username.id_for_label }}">Username:</label>
+        {{ form.username }}
+        {{ form.username.errors }}
+    </div>
+
+    <div class="form-field">
+        <label for="{{ form.email.id_for_label }}">Email:</label>
+        {{ form.email }}
+        {{ form.email.errors }}
+    </div>
+
+    <div class="form-field">
+        <label for="{{ form.password1.id_for_label }}">Password:</label>
+        {{ form.password1 }}
+        {{ form.password1.errors }}
+    </div>
+
+    <div class="form-field">
+        <label for="{{ form.password2.id_for_label }}">Password confirmation:</label>
+        {{ form.password2 }}
+        {{ form.password2.errors }}
+    </div>
+
+    <button type="submit">Register</button>
+</form>
 {% endblock content %}
