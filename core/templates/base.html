@@ -6,7 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
-    <link rel="stylesheet" href="{% static "/styles/main.css" %}" >
+
+    <link rel="stylesheet" href="{% static 'styles/main.css' %}">
+    <script src="{% static 'scripts/main.js' %}"></script>
+
     <title>{% block title %}{% endblock title %}</title>
   </head>
   <body>
@@ -16,16 +19,16 @@
         <div class="navbar-brand">
             <a href="/" class="navbar-item"><strong>Shop</strong></a>
 
-            <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="">
-                <span aria-hidden="true"></span>
-                <span aria-hidden="true"></span>
-                <span aria-hidden="true"></span>
-            </a>
+            <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="main-navbar">
+              <span aria-hidden="true"></span>
+              <span aria-hidden="true"></span>
+              <span aria-hidden="true"></span>
+          </a>
+          
         </div>
 
         <div class="navbar-menu" id="main-navbar">
             <div class="navbar-end">
-              {% comment %} <a  href="{% url "contact" %}" class="navbar=item">Conatct</a> {% endcomment %}
               <a href="{% url "contact" %}" class="navbar-item"><strong>Contact</strong></a>
 
             </div>

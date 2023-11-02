@@ -1,0 +1,10 @@
+.footer a {
+    text-decoration: none;
+    display: inline-block;
+    color: #444;
+}
+
+body {
+    border: 1px solid aqua; /* Example border style for the body element */
+    background-color: aquamarine;
+}
