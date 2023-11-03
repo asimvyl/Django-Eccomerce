@@ -27,6 +27,10 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+LOGIN_URL = 'login'
+LOGIN_REDIRECT_URL ='vender_admin'
+LOGOUT_REDIRECT_URL = 'front_page'
+
 
 # Application definition
 

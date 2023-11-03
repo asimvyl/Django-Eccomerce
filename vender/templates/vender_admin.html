@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block title %}
+Profile
+{% endblock title %}
+
+{% block content %}
+<div class="box">
+<h1 class="has-text-centered">Welcome {{vender.name}}</h1>
+<a href="{% url "log_out" %}" class="button is-danger"> Log Out </a>
+</div>
+{% endblock content %}

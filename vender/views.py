@@ -1,7 +1,6 @@
 from django.shortcuts import render,redirect
 from django.contrib.auth import login
-from django.contrib.auth.forms import UserCreationForm
-
+from django.contrib.auth.decorators import login_required
 
 from .forms import CustomUserCreationForm 
 from .models import Vender
@@ -17,3 +16,10 @@ def join_vender(request):
     else:
         form = CustomUserCreationForm()  
     return render(request, "join_vender.html", {"form": form})
+
+@login_required
+def vender_admin(request):
+    # connected by model related name
+    vender = request.user.vender
+    
+    return render(request,'vender_admin.html',{"vender":vender})
